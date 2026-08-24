@@ -4,6 +4,12 @@ English | [简体中文](README.zh_CN.md)
 
 FoloToy AI Passport is open wearable AI hardware designed for AI agents. This repository is the development baseline for the device. It goes beyond showing “what the board can run” by keeping the **hardware facts, stable interfaces, resource boundaries, reference implementations, and validation methods** that an agent needs to build applications in one place.
 
+This copy is Franklin's AI Passport Lab development repository. It keeps the
+confirmed board baseline together with experimental applications and records
+which ideas are only prototypes versus which have been accepted on hardware.
+The first accepted experiment is the offline `Leader` pixel mini-game, also
+referred to as “打老板”.
+
 The repository is organized around the following principles:
 
 - `main` is the smallest complete runnable baseline and an executable description of the current hardware capabilities.

@@ -51,6 +51,7 @@ static void play_tone(void) {
         total -= n;
     }
     free(buf);
+    bsp_audio_stop();
     set_status("done. OK: tone  UP: record");
 }
 
@@ -82,6 +83,7 @@ static void record_and_play(void) {
         bsp_audio_write(rec + off, n * sizeof(int16_t));
     }
     free(rec);
+    bsp_audio_stop();
     set_status("done. OK: tone  UP: record");
 }
 
@@ -124,6 +126,7 @@ void demo_audio_enter(void) {
 void demo_audio_exit(void) {
     s_req = 0;
     if (s_task) { vTaskDelete(s_task); s_task = NULL; }
+    bsp_audio_stop();
     if (s_scr) { lv_obj_delete(s_scr); s_scr = NULL; s_status = s_mascot = NULL; }
 }
 

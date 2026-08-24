@@ -168,3 +168,15 @@ esp_err_t bsp_audio_read(void *pcm, size_t bytes) {
 void bsp_audio_set_volume(uint8_t percent) {
     if (s_dev) esp_codec_dev_set_out_vol(s_dev, percent);
 }
+
+void bsp_audio_stop(void) {
+    if (!s_dev || !s_opened) return;
+
+    // 先把 DAC 数字音量归零，再 close 让驱动关闭 I2S/PA。
+    esp_codec_dev_set_out_vol(s_dev, 0);
+    esp_codec_dev_close(s_dev);
+    s_opened = false;
+    s_hz = 0;
+    s_bits = 0;
+    s_ch = 0;
+}
