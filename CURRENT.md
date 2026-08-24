@@ -1,12 +1,20 @@
 # Current State
 
-Updated: 2026-08-22
+Updated: 2026-08-24
 
 ## Project identity
 
 This is Franklin's long-lived FoloToy AI Passport hardware project. The
 `firmware/` repository is the code authority; the parent workspace also holds
 the preserved original-flash backup and local installation configuration.
+
+## Repository
+
+- Development repository: `https://github.com/franklin625-xn/ai-passport-lab` (private)
+- Active branch: `main`
+- Baseline commit: `a45e7d5`
+- Upstream source remains available as the `origin` remote:
+  `https://github.com/FoloToy/ai-passport.git`
 
 ## Status
 
